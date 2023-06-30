@@ -22,7 +22,8 @@
     "eject": "react-scripts eject",
     "test": "CI=TRUE react-scripts test",
     "test:dev": "react-scripts test",
-    "lint-staged": "npx lint-staged"
+    "lint-staged": "npx lint-staged",
+    "CI": "CI= yarn test && yarn build"
   },
   "eslintConfig": {
     "extends": [
