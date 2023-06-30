@@ -1,0 +1,29 @@
+name: Firebase Deploy
+
+on: [push]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: client
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: CI= yarn CI
+
+      - name: Deploy to Firebase
+        run: npx firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
