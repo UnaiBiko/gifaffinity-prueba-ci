@@ -6,7 +6,7 @@ name: Check code status
 on: [push]
 
 jobs:
-  Check code status:
+  Check-code-status:
     runs-on: ubuntu-latest
 
     defaults:
