@@ -29,4 +29,7 @@ jobs:
       - name: Pass test
         run: CI= yarn CI
 
+      - name: Set up Firebase CLI
+        uses: firebase-action/setup-firebase-tools@v1
+
       - run: echo "🍏 This job's status is ${{ job.status }}."
