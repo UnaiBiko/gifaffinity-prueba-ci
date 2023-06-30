@@ -23,6 +23,7 @@ const Home = () => {
   if (loadError) {
     return (
       <div className="fullscreen-container">
+        <h1>Probando el despiegue</h1>
         <h2 className="header-text">
           No hay GIFs que pena!!! Intentalo de nuevo
         </h2>
