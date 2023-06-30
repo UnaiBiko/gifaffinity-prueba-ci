@@ -25,8 +25,9 @@ jobs:
       - name: Build
         run: CI= yarn CI
 
-      - name: Set up Firebase CLI
-        uses: firebase-action/setup-firebase-tools@v1
+      - uses: pocket-apps/action-setup-firebase@v2
+        with:
+          firebase-token: ${{ secrets.FIREBASE_TOKEN }}
 
       - name: Deploy to Firebase
-        run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
+        run: firebase deploy
