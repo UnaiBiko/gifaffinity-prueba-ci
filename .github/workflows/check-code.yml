@@ -27,6 +27,7 @@ jobs:
         run: yarn install
 
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
+
       - name: Pass test
         run: CI= yarn CI
 
