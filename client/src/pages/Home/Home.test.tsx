@@ -27,7 +27,7 @@ describe('Home', () => {
     )
     render(<Home />)
     expect(
-      await screen.findByText('No hay GIFs que pena!!!'),
+      await screen.findByText('No hay GIFs que pena!!! Intentalo de nuevo'),
     ).toBeInTheDocument()
   })
 })

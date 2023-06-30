@@ -23,7 +23,9 @@ const Home = () => {
   if (loadError) {
     return (
       <div className="fullscreen-container">
-        <h2 className="header-text">No hay GIFs que pena!!!</h2>
+        <h2 className="header-text">
+          No hay GIFs que pena!!! Intentalo de nuevo
+        </h2>
         <img src={payaso} alt="payaso" width={300} height={300} />
       </div>
     )
