@@ -1,33 +1,33 @@
-name: Deploy to Firebase Hosting on PR
+name: Firebase Deploy
 
 on: workflow_dispatch
 
 jobs:
-  runs-on: ubuntu-latest
+  deploy:
+    runs-on: ubuntu-latest
 
     defaults:
       run:
         working-directory: client
-    
-    strategy:
-      matrix:
-        node-version: [16.x]
 
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: "16.x"
+          node-version: 16
 
       - name: Install dependencies
         run: yarn install
 
-      - name: Make build
+      - name: Build
         run: CI= yarn build
 
+      - uses: pocket-apps/action-setup-firebase@v2
+        with:
+          firebase-token: ${{ secrets.FIREBASE_TOKEN }}
+
       - name: Deploy to Firebase
-          uses: w9jds/firebase-action@master
-          with:
-            args: deploy --only hosting
-          env:
-            FIREBASE_TOKEN: "${{ secrets.FIREBASE_TOKEN }}"
+        run: firebase deploy
