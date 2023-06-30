@@ -19,8 +19,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "test": "CI=TRUE react-scripts test",
+    "test:dev": "react-scripts test",
     "lint-staged": "npx lint-staged"
   },
   "eslintConfig": {
