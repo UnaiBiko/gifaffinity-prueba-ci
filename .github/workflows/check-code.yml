@@ -2,6 +2,7 @@
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
 
 name: Check code status
+run-name: ${{ github.actor }} is checking PR code 🚀
 
 on: [push]
 
